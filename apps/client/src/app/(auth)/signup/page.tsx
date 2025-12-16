@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["sign up", "account type", "developer", "business", "sendexa"],
 };
 
-import { SignupForm } from "@/components/auth/SignupForm";
+import { SignUpForm } from "@/components/auth/SignupForm";
 import Link from "next/link";
 import { EnhancedLoader } from "@/components/ui/EnhancedLoader";
 
@@ -39,7 +39,7 @@ export default function SignupPage() {
                 />
               }
             >
-              <SignupForm />
+              <SignUpForm />
             </Suspense>
           </div>
         </div>
