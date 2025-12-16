@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "postinstall": "contentlayer2 build",
     "build:content": "contentlayer2 build",
     "format": "prettier --write .",
     "check-types": "tsc --noEmit",
