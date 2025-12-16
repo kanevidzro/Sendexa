@@ -1,3 +1,4 @@
+
 import { ChevronDown2Icon } from '@/icons/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -58,6 +59,7 @@ export default function DesktopNav() {
   const pathname = usePathname();
   const [activeDropdownKey, setActiveDropdownKey] = useState('');
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [isHoveringDropdown, setIsHoveringDropdown] = useState(false);
 
   function toggleActiveDropdown(key: string) {
     setActiveDropdownKey((prevKey) => (prevKey === key ? '' : key));
@@ -69,6 +71,9 @@ export default function DesktopNav() {
   }
 
   function closeDropdown(delay = 150) {
+    // Don't close if user is hovering over the dropdown
+    if (isHoveringDropdown) return;
+    
     if (hoverTimeout) clearTimeout(hoverTimeout);
     const timeout = setTimeout(() => {
       setActiveDropdownKey('');
@@ -139,8 +144,14 @@ export default function DesktopNav() {
               {isDropdownActive && (
                 <div
                   className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-theme-xl border border-gray-100 dark:border-gray-800 p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-                  onMouseEnter={() => openDropdown(item.label)}
-                  onMouseLeave={() => closeDropdown()}
+                  onMouseEnter={() => {
+                    setIsHoveringDropdown(true);
+                    openDropdown(item.label);
+                  }}
+                  onMouseLeave={() => {
+                    setIsHoveringDropdown(false);
+                    closeDropdown(100); // Shorter delay when leaving dropdown
+                  }}
                 >
                   <div className="space-y-0.5">
                     {item.items.map((subItem) => {
@@ -158,6 +169,10 @@ export default function DesktopNav() {
                               'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50': !isSubActive,
                             }
                           )}
+                          onClick={() => {
+                            setActiveDropdownKey('');
+                            setIsHoveringDropdown(false);
+                          }}
                         >
                           {iconComponent && (
                             <div className={cn(
