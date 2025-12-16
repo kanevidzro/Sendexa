@@ -32,12 +32,12 @@ export default function RootLayout({
       <body
         className={`bg-gray-50 dark:bg-dark-secondary min-h-screen flex flex-col ${onest.className}`}
       >
-        <ThemeProvider disableTransitionOnChange>
+        {/* <ThemeProvider disableTransitionOnChange> */}
          
           <ToasterProvider />
 
           <div className="isolate flex flex-col flex-1">{children}</div>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
