@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 relative overflow-hidden dark:bg-[#171F2E]">
+    <section className="pt-20 pb-15 relative overflow-hidden dark:bg-[#171F2E]">
       <div className="max-w-[120rem] mx-auto relative">
         <div className="wrapper">
           <div className="max-w-[800px] mx-auto">
