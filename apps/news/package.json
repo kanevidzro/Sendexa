@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "concurrently \"next dev --port 3001\" \"contentlayer2 build --watch\"",
     "build": "next build",
-    "postinstall": "contentlayer2 build",
     "start": "next start",
     "lint": "eslint .",
     "build:content": "contentlayer2 build",

@@ -1,0 +1,59 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
+    "@hugeicons/core-free-icons": "^2.0.0",
+    "@hugeicons/react": "^1.1.1",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-separator": "^1.1.8",
+    "clsx": "^2.1.1",
+    "copy-text-to-clipboard": "^3.2.0",
+    "fslightbox-react": "^1.8.0",
+    "next": "16.0.10",
+    "next-auth": "^5.0.0-beta.27",
+    "next-themes": "^0.4.6",
+    "pg": "^8.14.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hook-form": "^7.56.1",
+    "sonner": "^2.0.3",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "use-stick-to-bottom": "^1.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/fslightbox-react": "^1.8.0",
+    "@types/node": "^20",
+    "@types/pg": "^8.11.13",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9",
+    "@biomejs/biome": "2.3.8",
+    "eslint-config-next": "16.0.10",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ],
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.7",
+      "@types/react-dom": "19.2.3"
+    }
+  }
+}
