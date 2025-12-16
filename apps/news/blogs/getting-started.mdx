@@ -1,0 +1,236 @@
+---
+title: Getting Started with Sendexa
+description: Learn how to set up and start using Sendexa in just a few minutes. This comprehensive guide covers installation, configuration, and your first email campaign.
+publishedAt: 2024-12-16
+author: Sendexa Team
+readingTime: 8 min read
+tags:
+  - getting-started
+  - tutorial
+  - setup
+image: /images/getting-started.jpg
+---
+
+
+## Welcome to Sendexa
+
+Sendexa is a powerful email marketing and automation platform designed to help you engage with your audience effectively. Whether you're a small startup or an established business, Sendexa provides the tools you need to create, send, and track professional email campaigns.
+
+<Callout type="tip" title="Quick Tip">
+  Have Sendexa already? Jump straight to creating your first campaign by heading to the dashboard.
+</Callout>
+
+## Prerequisites
+
+Before you get started, make sure you have the following:
+
+- A Sendexa account (sign up at [sendexa.co](https://sendexa.co))
+- A verified email domain or subdomain
+- Basic understanding of email marketing concepts
+- Access to your DNS settings (for domain verification)
+
+## Step 1: Create Your Account
+
+1. Visit [sendexa.co](https://sendexa.co) and click **"Get Started"**
+2. Enter your email address and create a strong password
+3. Check your email for a verification link and click it
+4. Complete your profile information
+
+<Callout type="info">
+  We recommend using a business email address to keep your account professional and secure.
+</Callout>
+
+## Step 2: Verify Your Domain
+
+To ensure maximum email deliverability, you need to verify your domain:
+
+### Add DNS Records
+
+Navigate to **Settings → Domains** and follow these steps:
+
+1. Click **"Add Domain"**
+2. Enter your domain name (e.g., `mail.yourcompany.com`)
+3. Copy the CNAME records provided
+4. Log into your domain registrar (GoDaddy, Namecheap, etc.)
+5. Add the CNAME records to your DNS settings
+6. Return to Sendexa and click **"Verify Domain"**
+
+<Note type="warning" hideIcon={false}>
+  DNS propagation can take 24-48 hours. If verification fails, wait a bit and try again.
+</Note>
+
+### DNS Records You'll Need
+
+| Record Type | Name | Value |
+|------------|------|-------|
+| CNAME | sendmail | sendmail.sendexa.co |
+| TXT | dkim | v=DKIM1; p=YOUR_DKIM_KEY |
+| TXT | _dmarc | v=DMARC1; p=quarantine; |
+
+## Step 3: Set Up Your First Contact List
+
+Contact lists are the foundation of your email marketing:
+
+<Steps>
+  <Step>
+    <StepTitle>Create a New List</StepTitle>
+    <StepContent>
+      Go to **Contacts → Lists** and click **"Create New List"**. Give it a memorable name like "Newsletter Subscribers".
+    </StepContent>
+  </Step>
+  <Step>
+    <StepTitle>Configure List Settings</StepTitle>
+    <StepContent>
+      Set default sender name and email address, then configure list-specific reply-to settings.
+    </StepContent>
+  </Step>
+  <Step>
+    <StepTitle>Add Contacts</StepTitle>
+    <StepContent>
+      Import contacts via CSV, connect your CRM, or add them manually through the dashboard.
+    </StepContent>
+  </Step>
+</Steps>
+
+## Step 4: Create Your First Campaign
+
+Now it's time to send your first email:
+
+### Campaign Types
+
+<Tabs defaultValue="newsletter">
+  <TabsList>
+    <Tab value="newsletter">Newsletter</Tab>
+    <Tab value="promotional">Promotional</Tab>
+    <Tab value="transactional">Transactional</Tab>
+  </TabsList>
+  <TabsContent value="newsletter">
+    Regular emails sent to your subscriber list with updates and news.
+  </TabsContent>
+  <TabsContent value="promotional">
+    Time-sensitive campaigns designed to drive action (sales, events, etc).
+  </TabsContent>
+  <TabsContent value="transactional">
+    Automated emails triggered by user actions (welcome emails, confirmations, etc).
+  </TabsContent>
+</Tabs>
+
+### Creating Your Campaign
+
+1. Go to **Campaigns → New Campaign**
+2. Select your campaign type
+3. Choose your audience (contact list)
+4. Design your email using the drag-and-drop editor
+5. Set up A/B testing (optional)
+6. Schedule or send immediately
+
+<Callout type="success" title="Pro Tip">
+  Use personalization tags like `{{firstName}}` to make your emails feel more personal.
+</Callout>
+
+## Step 5: Design Your Email
+
+The email editor is intuitive and powerful:
+
+```
+Basic Structure:
+├── Header (Logo, navigation)
+├── Hero Image
+├── Main Content
+├── Call-to-Action Button
+└── Footer (Links, unsubscribe)
+```
+
+### Best Practices
+
+- **Keep it mobile-friendly**: 60% of emails are opened on mobile devices
+- **Use clear CTAs**: Make your call-to-action button prominent and obvious
+- **Test before sending**: Use the preview feature to check across devices
+- **Optimize images**: Compress images to reduce file size
+- **Keep it concise**: Aim for 150-200 words in the body
+
+<CodeBlock language="html" title="Simple Email Template">
+{`<html>
+  <body style="font-family: Arial, sans-serif;">
+    <h1>Welcome to Sendexa</h1>
+    <p>Hi {{firstName}},</p>
+    <p>Thanks for joining us. We're excited to have you on board.</p>
+    <a href="https://example.com/start" 
+       style="background: #007bff; color: white; padding: 10px 20px; 
+              border-radius: 5px; text-decoration: none;">
+      Get Started
+    </a>
+  </body>
+</html>`}
+</CodeBlock>
+
+## Step 6: Monitor Your Results
+
+After sending your campaign, track its performance:
+
+### Key Metrics to Watch
+
+| Metric | What It Means |
+|--------|---------------|
+| **Delivery Rate** | % of emails successfully delivered |
+| **Open Rate** | % of recipients who opened the email |
+| **Click Rate** | % of recipients who clicked a link |
+| **Conversion Rate** | % of clicks that led to desired action |
+| **Bounce Rate** | % of emails that failed to deliver |
+| **Unsubscribe Rate** | % of people who opted out |
+
+<MDXImage
+  src="/images/hero/Exadash.png"
+  alt="Sendexa Analytics Dashboard"
+  caption="Monitor your campaign performance in real-time"
+  rounded={true}
+  shadow={true}
+/>
+
+## Next Steps
+
+Congratulations! You've created your first email campaign. Here's what to do next:
+
+<Callout type="info">
+  **Explore Automation**: Set up email sequences that trigger based on user behavior.
+</Callout>
+
+1. **Build Automations** - Create triggered email sequences
+2. **Segment Your Audience** - Send targeted campaigns to specific groups
+3. **Test and Optimize** - A/B test subject lines, content, and CTAs
+4. **Integrate Tools** - Connect your CRM, e-commerce platform, or other tools
+5. **Set Up Analytics** - Track conversions and ROI
+
+## Common Questions
+
+<Callout type="warning" title="Why are my emails going to spam?">
+  This can happen due to domain verification issues, poor sender reputation, or flagged content. Check your DKIM/SPF settings and review email content for spam triggers.
+</Callout>
+
+<Callout type="info" title="Can I schedule campaigns in advance?">
+  Yes! When creating a campaign, select "Schedule" instead of "Send Now" to choose when your email should be delivered.
+</Callout>
+
+<Callout type="tip" title="What's the best time to send emails?">
+  Generally, Tuesday-Thursday at 10 AM in your recipient's timezone performs well, but test different times to find what works for your audience.
+</Callout>
+
+## Resources
+
+- 📚 [Full Documentation](https://docs.sendexa.co)
+- 🎓 [Email Marketing Academy](https://academy.sendexa.co)
+- 💬 [Community Forum](https://community.sendexa.co)
+- 📧 [Support Email](mailto:support@sendexa.co)
+- 🎬 [Video Tutorials](https://youtube.com/sendexa)
+
+## Need Help?
+
+Our support team is here for you:
+
+- **Email**: support@sendexa.co
+- **Chat**: Available in the dashboard (Monday-Friday, 9 AM - 6 PM EST)
+- **Documentation**: Comprehensive guides for every feature
+
+---
+
+You're all set! Start building amazing email campaigns with Sendexa today. Happy emailing! 🚀

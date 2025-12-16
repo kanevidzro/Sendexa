@@ -1,0 +1,460 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+@theme inline {
+  /* Updated Primary Colors - Sendexa Brand */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #084992;  /* Your primary brand color */
+  
+  /* Accent Colors - Orange */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f59a1b;  /* Your accent brand color */
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+
+  /* Success Colors */
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fadf;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+
+  /* Error Colors */
+  --color-error-50: #fef3f2;
+  --color-error-100: #fee4e2;
+  --color-error-500: #f04438;
+  --color-error-600: #d92d20;
+
+  /* Dark Mode Colors */
+  --color-dark-primary: #0f172a;
+  --color-dark-secondary: #1e293b;
+
+  /* Typography */
+  --text-title-lg: 44px;
+  --text-title-lg--line-height: 52px;
+
+  /* Shadows */
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(8, 73, 146, 0.05);
+  --shadow-theme-sm: 0px 8px 20px 0px rgba(8, 73, 146, 0.1);
+  --shadow-theme-lg:
+    0px 12px 16px -4px rgba(8, 73, 146, 0.1),
+    0px 4px 6px -2px rgba(8, 73, 146, 0.05);
+  --shadow-ring: 0px 0px 0px 4px rgba(8, 73, 146, 0.12);
+  --shadow-theme-md: 0px 8px 30px 0px rgba(8, 73, 146, 0.08);
+
+  /* Background Gradients - Updated with Sendexa colors */
+  --background-image-gradient-1: linear-gradient(
+    180deg,
+    #eff6ff 0%,
+    #dbeafe 50%,
+    #ffedd5 100%
+  );
+  --background-image-gradient-2: linear-gradient(
+    97deg,
+    #084992 0%,
+    #3b82f6 100%
+  );
+  --background-image-gradient-3: linear-gradient(
+    97deg,
+    #084992 0%,
+    #f59a1b 100%
+  );
+}
+
+/* Button Background - Updated with Sendexa colors */
+.button-bg {
+  background-image: linear-gradient(97deg, #084992 0%, #3b82f6 100%);
+}
+
+/* Tab Image Background - Updated with Sendexa colors */
+.tab-img-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 154, 27, 0.2) 0%,
+    rgba(8, 73, 146, 0.2) 100%
+  );
+  position: relative;
+  z-index: 20;
+}
+
+[data-theme="light"] .tab-img-bg::after {
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 93.51%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+[data-theme="dark"] .tab-img-bg::after {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, #0f172a 93.51%);
+}
+
+.tab-img-overlay {
+  border-radius: 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 67.58%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(18.81816291809082px);
+  position: relative;
+  z-index: 20;
+}
+
+@utility wrapper {
+  @apply container px-5 mx-auto sm:px-7;
+}
+
+.shadow-one {
+  box-shadow: 0px 1px 2px 0px rgba(8, 73, 146, 0.05);
+}
+
+/* Benefits Background - Updated with Sendexa colors */
+.benefits-bg {
+  border-radius: 20px;
+  background: linear-gradient(216deg, #3b82f6 0%, #084992 100%);
+}
+
+/* Secondary Gradient - Updated with Sendexa colors */
+.gradient-bg-two {
+  background-image: linear-gradient(97deg, #084992 0%, #f59a1b 100%);
+}
+
+/* Hero Glow Background - Updated with Sendexa colors */
+@utility hero-glow-bg {
+  background-image: linear-gradient(
+    180deg,
+    rgba(8, 73, 146, 0) 0%,
+    #084992 100%
+  );
+}
+
+.core-feature-wrapper {
+  border-radius: 20px;
+  box-shadow: 0px 30px 50px -32px rgba(8, 73, 146, 0.04);
+}
+
+/* Core Feature Icon - Updated with Sendexa colors */
+.core-feature-icon {
+  background-image: linear-gradient(
+    180deg,
+    #084992 0%,
+    rgba(8, 73, 146, 0.2) 100%
+  );
+  filter: drop-shadow(0px 23px 33px rgba(8, 73, 146, 0.3));
+  width: 76px;
+  height: 76px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.contact-wrapper {
+  border-radius: 24px;
+  box-shadow: 0px 32px 100px -12px rgba(8, 73, 146, 0.05);
+}
+
+/* Dashboard Gradient - Updated with Sendexa colors */
+.dashboard-gradient {
+  background-image: linear-gradient(
+    92deg,
+    #084992 0%,
+    #3b82f6 100%
+  );
+}
+
+[data-theme="light"] .widget-bg {
+  background-image: linear-gradient(
+    180deg,
+    #eff6ff 0%,
+    #dbeafe 50%,
+    #ffedd5 100%
+  );
+}
+
+[data-theme="dark"] .widget-bg {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    @apply w-4.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 border-[0.35rem] border-transparent bg-clip-padding rounded-full;
+  }
+
+  [data-theme="dark"] &::-webkit-scrollbar-thumb {
+    @apply bg-gray-700;
+  }
+}
+
+/* Desktop hover behavior */
+@media (min-width: 1024px) {
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Rotate arrow on hover for desktop */
+  .nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* Gradient Border - Updated with Sendexa colors */
+.gradient-border {
+  position: relative;
+  background-clip: padding-box;
+  border: 1.5px solid transparent;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -1.4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    rgba(245, 154, 27, 0.5),
+    rgba(8, 73, 146, 0.5)
+  );
+  z-index: -1;
+}
+
+.dark .gradient-border::before {
+  z-index: 5;
+}
+
+/* This hides elements with x-cloak until Alpine.js is ready */
+[x-cloak] {
+  display: none !important;
+}
+
+[data-theme="light"] .white-gradient {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 44.75%
+  );
+}
+
+[data-theme="dark"] .white-gradient {
+  background-image: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0) 0%,
+    #0f172a 44.75%
+  );
+}
+
+/* Gradient Button - Updated with Sendexa colors */
+.gradient-btn {
+  background-image: linear-gradient(97deg, #084992 0%, #3b82f6 100%);
+  color: white;
+  background-size: 200% auto;
+  background-position: 0% center;
+  transition:
+    background-position 0.6s ease-in-out,
+    transform 0.3s ease;
+  will-change: background-position, transform;
+}
+
+.gradient-btn:hover {
+  background-image: linear-gradient(97deg, #3b82f6 0%, #084992 100%);
+  background-position: 100% center;
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.history-item {
+  position: relative;
+  height: 40px;
+  mask-image: linear-gradient(
+    90deg,
+    #000,
+    #000 84%,
+    transparent 89%,
+    transparent
+  );
+}
+
+.history-item:hover {
+  mask-image: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Float vertically */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Float horizontally */
+@keyframes float-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Float diagonally */
+@keyframes float-xy {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+
+/* Subtle slow float in reverse */
+@keyframes float-rev {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Animation classes */
+.floating-1 {
+  animation: float-y 3s ease-in-out infinite;
+}
+
+.floating-2 {
+  animation: float-x 4s ease-in-out infinite;
+}
+
+.floating-3 {
+  animation: float-xy 5s ease-in-out infinite;
+}
+
+.floating-4 {
+  animation: float-rev 6s ease-in-out infinite;
+}
+
+/* New Sendexa-specific utility classes */
+
+/* Sendexa Primary Background */
+.sendexa-bg-primary {
+  background-color: #084992;
+}
+
+.sendexa-bg-primary-gradient {
+  background: linear-gradient(135deg, #084992 0%, #0a56c1 100%);
+}
+
+/* Sendexa Accent Background */
+.sendexa-bg-accent {
+  background-color: #f59a1b;
+}
+
+.sendexa-bg-accent-gradient {
+  background: linear-gradient(135deg, #f59a1b 0%, #f7b548 100%);
+}
+
+/* Sendexa Text Colors */
+.sendexa-text-primary {
+  color: #084992;
+}
+
+.sendexa-text-accent {
+  color: #f59a1b;
+}
+
+/* Sendexa Border Colors */
+.sendexa-border-primary {
+  border-color: #084992;
+}
+
+.sendexa-border-accent {
+  border-color: #f59a1b;
+}
+
+/* Sendexa Hover Effects */
+.sendexa-hover-primary:hover {
+  background-color: #063874;
+}
+
+.sendexa-hover-accent:hover {
+  background-color: #e08a18;
+}
+
+/* Ghana Flag Colors for Special Elements */
+.ghana-flag-red {
+  background-color: #CE1126;
+}
+
+.ghana-flag-yellow {
+  background-color: #FCD116;
+}
+
+.ghana-flag-green {
+  background-color: #006B3F;
+}
+
+.ghana-flag-black {
+  background-color: #000000;
+}

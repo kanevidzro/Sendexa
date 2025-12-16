@@ -1,0 +1,15 @@
+export { default as boxCube } from "./box-cube.svg";
+export { default as bulb } from "./bulb.svg";
+export { default as chat } from "./chat.svg";
+export { default as crown } from "./crown.svg";
+export { default as file } from "./file.svg";
+export { default as laptop } from "./laptop.svg";
+export { default as lightningBolt } from "./lightning-bolt.svg";
+export { default as pencil } from "./pencil.svg";
+export { default as robot } from "./robot.svg";
+export { default as selectCursor } from "./select-cursor.svg";
+export { default as SmsCodeIcon } from "./SmsCodeIcon.svg";
+export { default as BubbleChatIcon } from "./BubbleChatIcon.svg";
+export { default as Mail01Icon } from "./Mail01Icon.svg";
+export { default as WhatsappBusinessIcon } from "./WhatsappBusinessIcon.svg";
+export { default as CellularNetworkIcon } from "./CellularNetworkIcon.svg";
